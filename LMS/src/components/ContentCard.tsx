@@ -1,25 +1,13 @@
 import React from "react";
 import "./ContentCard.css";
-import { useNavigate } from "react-router-dom";
 
 interface ContentCardProps {
-  id: string;
   type: "pdf" | "video" | "youtube";
   name: string;
-  content: File | string;
   onDelete?: () => void;
 }
 
-const ContentCard: React.FC<ContentCardProps> = ({
-  id,
-  type,
-  name,
-  content,
-  onDelete,
-}) => {
-  const navigate = useNavigate();
-
-  // Function to get random image based on content type
+const ContentCard: React.FC<ContentCardProps> = ({ type, name, onDelete }) => {
   const getRandomImage = (type: string) => {
     const images = {
       pdf: [
@@ -44,23 +32,10 @@ const ContentCard: React.FC<ContentCardProps> = ({
     return typeImages[randomIndex];
   };
 
-  const handleClick = async () => {
+  const handleClick = () => {
     if (type === "pdf") {
-      if (typeof content === "string") {
-        // If content is a URL
-        localStorage.setItem(`pdf-${id}`, content);
-      } else {
-        // If content is a File, convert to data URL
-        const reader = new FileReader();
-        reader.onload = () => {
-          const base64 = reader.result as string;
-          localStorage.setItem(`pdf-${id}`, base64);
-          navigate(`/view-pdf/${id}`);
-        };
-        reader.readAsDataURL(content);
-        return;
-      }
-      navigate(`/view-pdf/${id}`);
+      // PDF viewer implementation will go here
+      console.log("PDF clicked:", name);
     }
     // Handle video and youtube types here later
   };

@@ -1,0 +1,25 @@
+{
+  "name": "@lms/pdf-editor",
+  "version": "1.0.0",
+  "description": "A web component for editing PDF metadata and uploading PDFs",
+  "main": "dist/PdfEditorComponent.js",
+  "types": "dist/PdfEditorComponent.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "lit": "^2.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "web-components",
+    "pdf",
+    "editor",
+    "lit-element"
+  ],
+  "author": "",
+  "license": "MIT"
+}
