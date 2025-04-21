@@ -1,0 +1,98 @@
+.pdf-viewer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-viewer-toolbar {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdf-viewer-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.control-btn {
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.control-btn:hover:not(:disabled) {
+  background-color: #555;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.close-btn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #ff0000;
+}
+
+.pdf-document-container {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.pdf-document {
+  background-color: #666;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.pdf-page {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar for the PDF container */
+.pdf-document-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.pdf-document-container::-webkit-scrollbar-track {
+  background: #444;
+}
+
+.pdf-document-container::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 5px;
+}
+
+.pdf-document-container::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
